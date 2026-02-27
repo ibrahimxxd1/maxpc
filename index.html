@@ -1,283 +1,718 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width-device">
-        <title>
-            MAXPC STORE
-        </title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Playwrite+NZ+Basic:wght@100..400&family=SN+Pro:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
-        <style>
-            *{
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-                
-            }
-            .nav-1{
-                background-color: white;
-                display: flex;
-                margin-top: 10px;
-                align-items: center;
-                gap: 0px;
-                padding: 10px;
-                
-            }
-            input{
-                padding: 20px 250px;
-                outline: none;
-                border-radius: 20px;
-                border-style: solid;
-                margin-right: 120px;
-            }
-            .store-logo{
-                width: 200px;
-                margin-right: 55px;
-                cursor: pointer;
-            }
-            
-            .shop-button{
-                padding: 10px 20px;
-                margin-left: 30px;
-                margin-right: 10px;
-                cursor: pointer;
-                border-style: none;
-                background-color: rgb(230, 33, 92);
-                border-radius: 20px;
-            }
-            .shop-button:hover{
-                opacity: 0.8;
-                transition: opacity 0.5s;
-            }
-            .panier-price{
-                margin-left: 0px;
-            }
-            .signup-button{
-                padding: 10px 20px;
-                cursor: pointer;
-                border-style: none;
-                border-radius: 15px;
-            }
-            .nav-search{
-                background-color: lightgrey;
-                height: auto;
-                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-                
-            }
-            .nav-2{
-                background-color: #333;
-                padding: 12px 20px;
-                display: flex;
-                align-items: center;
-                
-                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-                margin-bottom: 30px;
-                
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MAXPC STORE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --red: #e6215c;
+      --red-glow: rgba(230, 33, 92, 0.35);
+      --dark: #0a0a0f;
+      --dark-2: #111118;
+      --dark-3: #18181f;
+      --dark-4: #22222c;
+      --border: rgba(255,255,255,0.07);
+      --text: #e8e8f0;
+      --text-muted: #7a7a90;
+      --font-display: 'Barlow Condensed', sans-serif;
+      --font-body: 'Barlow', sans-serif;
+    }
 
-            }
-            .nav-2 a{
-                text-decoration: none;
-                color: white;
-                font-size: 13px;
-                display: flex;
-                align-items: center;
-                gap: 5px;
-                cursor: pointer;
-                margin-left: 20px;
-                padding: 8px 20px ;
-                font-family: Open Sans, Arial, Helvetica, sans-serif; 
-                font-weight: bold;
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-            }
-            .nav-2 a:hover{
-                opacity: 0.7;
-                transition: opacity 0.5s;
-            }
-            .config-1{
-                margin-left: 50px;
-                cursor: pointer;
-                background-color: rgb(230, 33, 92);
-                padding: 10px 20px;
-                color: white;
-                border-style: none;
-                border-radius: 8px;
-            }
-            .config-1:hover{
-                opacity: 0.7;
-                transition: opacity 0.5s;
-            }
-            .nos-cag{
-                background-color: rgb(230, 33, 92);
-                border-radius: 8px;
-            }
-            .products-container{
-                display: grid;
-                grid-template-columns: 1fr 1fr 1fr 1fr;
-                gap: 20px;
-                padding: 20px;
-            }
-            .card img{
-                width: 100%;
-                height: auto;
-            }
-            .card{
-                background-color: white;
-                border-radius: 20px;
-                padding: 15px;
-                position: relative;
-                cursor: pointer;
-                transition: transform 0.5s ease-in, box-shadow 0.5s ease-in;
-                
-            }
-            .card:hover{
-                transform: translateY(-5px);
-                box-shadow: 0 8px 16px rgba(0,0,0,0.15);
-                border: 3px solid #dc3545;
-            }   
-            .title-1{
-                margin-left: 10px;
-                font-size:x-large;
-            }
-            .img-container{
-                display: grid;
-                grid-template-columns: repeat(6, 1fr);
-                gap: 20px;
-                max-width: 1400px;
-                margin: 0 auto;
-                padding: 20px;
+    body {
+      background-color: var(--dark);
+      color: var(--text);
+      font-family: var(--font-body);
+      overflow-x: hidden;
+    }
 
-            }     
-            .img-container img{
-                width: 100%;
-                height: auto;
-                
+    /* ─── SCROLLBAR ─── */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--dark-2); }
+    ::-webkit-scrollbar-thumb { background: var(--red); border-radius: 3px; }
 
-            }   
-            .card-1{
-                background-color: white;
-                border-radius: 20px;
-                padding: 15px;
-                position: relative;
-                cursor: pointer;
-                transition: transform 0.5s ease-in, box-shadow 0.5s ease-in;
-            }  
-            .card-1:hover{
-                transform: translateY(-5px);
-                box-shadow: 0 8px 16px rgba(0,0,0,0.15);
-                border: 3px solid grey;
-            }   
-            .card-1 a{
-                font-family: SN pro;
-                font-weight:300 ;
-            }
+    /* ─── TOP BAR ─── */
+    .topbar {
+      background: var(--red);
+      text-align: center;
+      padding: 7px 20px;
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
 
-            .lap-1{
-                width: 200px;
-                height: 200px;
+    /* ─── NAV ─── */
+    .nav-wrapper {
+      background: var(--dark-2);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(12px);
+    }
+    nav.nav-1 {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 14px 30px;
+    }
+    .store-logo {
+      width: 160px;
+      flex-shrink: 0;
+      cursor: pointer;
+      filter: brightness(0) invert(1);
+    }
+    .search-wrap {
+      flex: 1;
+      position: relative;
+      max-width: 560px;
+    }
+    .search-wrap input {
+      width: 100%;
+      padding: 12px 20px 12px 46px;
+      background: var(--dark-3);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+    .search-wrap input:focus { border-color: var(--red); }
+    .search-wrap input::placeholder { color: var(--text-muted); }
+    .search-icon {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      font-size: 16px;
+    }
+    .nav-actions { display: flex; align-items: center; gap: 10px; margin-left: auto; }
+    .btn-icon {
+      background: var(--dark-3);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: background 0.2s, border-color 0.2s;
+      display: flex; align-items: center; gap: 8px;
+      text-decoration: none;
+    }
+    .btn-icon:hover { background: var(--dark-4); border-color: var(--red); }
+    .btn-cart {
+      background: var(--red);
+      border: 1px solid var(--red);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-family: var(--font-display);
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      display: flex; align-items: center; gap: 8px;
+      transition: opacity 0.2s, box-shadow 0.2s;
+    }
+    .btn-cart:hover { opacity: 0.85; box-shadow: 0 0 20px var(--red-glow); }
+    .cart-price { font-size: 13px; color: rgba(255,255,255,0.7); font-weight: 400; }
 
-            }
-        </style>
-    </head>
-    <body>
-        <div class="nav-search">
-        <nav class="nav-1">
-            <img src="logo-1.svg" class="store-logo">
-            <input type="text" placeholder="search for products">
-            
-            <a href="https://maxgaming.ma/my-account/?action=register" target="_blank">
-             <button class="signup-button">
-                👤
-        
-            </button>
-            </a>
-            <button class="shop-button"> 🛒 </button>
-            
-            <a class="panier-price">
-                0,00MAD
-            </a>
-        </nav>
+    /* ─── NAV-2 ─── */
+    nav.nav-2 {
+      background: var(--dark-3);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-2-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      padding: 0 30px;
+    }
+    .nav-2-inner a {
+      text-decoration: none;
+      color: var(--text-muted);
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 14px 16px;
+      display: block;
+      position: relative;
+      transition: color 0.2s;
+      white-space: nowrap;
+    }
+    .nav-2-inner a::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 50%; right: 50%;
+      height: 2px;
+      background: var(--red);
+      transition: left 0.2s, right 0.2s;
+    }
+    .nav-2-inner a:hover { color: white; }
+    .nav-2-inner a:hover::after { left: 0; right: 0; }
+    .nav-2-inner a.active { color: white; }
+    .nav-2-inner a.active::after { left: 0; right: 0; }
+    .nav-cat {
+      color: white !important;
+      background: var(--red);
+      padding: 14px 20px !important;
+      margin-right: 10px;
+    }
+    .nav-cat::after { display: none !important; }
+    .btn-config {
+      margin-left: auto;
+      background: transparent;
+      border: 1px solid var(--red);
+      color: var(--red);
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 8px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    }
+    .btn-config:hover {
+      background: var(--red);
+      color: white;
+      box-shadow: 0 0 16px var(--red-glow);
+    }
+
+    /* ─── HERO BANNER ─── */
+    .hero {
+      max-width: 1400px;
+      margin: 40px auto 0;
+      padding: 0 30px;
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 20px;
+    }
+    .hero-main {
+      background: linear-gradient(135deg, var(--dark-3) 0%, #1a0a14 100%);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 60px 50px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 340px;
+    }
+    .hero-main::before {
+      content: '';
+      position: absolute;
+      top: -80px; right: -80px;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, var(--red-glow) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-eyebrow {
+      font-family: var(--font-display);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 12px;
+    }
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: 72px;
+      font-weight: 900;
+      line-height: 0.9;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .hero-title span { color: var(--red); }
+    .hero-sub {
+      color: var(--text-muted);
+      font-size: 15px;
+      line-height: 1.6;
+      max-width: 400px;
+      margin-bottom: 30px;
+    }
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--red);
+      color: white;
+      font-family: var(--font-display);
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 14px 32px;
+      border-radius: 8px;
+      cursor: pointer;
+      border: none;
+      transition: box-shadow 0.3s, transform 0.2s;
+    }
+    .hero-cta:hover { box-shadow: 0 0 30px var(--red-glow); transform: translateY(-2px); }
+    .hero-side {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .hero-side-card {
+      flex: 1;
+      background: var(--dark-3);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      cursor: pointer;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-side-card:hover { border-color: var(--red); box-shadow: 0 0 20px var(--red-glow); }
+    .side-label {
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 6px;
+    }
+    .side-title {
+      font-family: var(--font-display);
+      font-size: 24px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+    .side-sub { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+
+    /* ─── PRODUCTS SECTION ─── */
+    .section {
+      max-width: 1400px;
+      margin: 60px auto 0;
+      padding: 0 30px;
+    }
+    .section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 24px;
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: 28px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .section-title::before {
+      content: '';
+      display: block;
+      width: 4px;
+      height: 28px;
+      background: var(--red);
+      border-radius: 2px;
+    }
+    .see-all {
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--red);
+      text-decoration: none;
+      border: 1px solid var(--red);
+      padding: 8px 18px;
+      border-radius: 6px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .see-all:hover { background: var(--red); color: white; }
+
+    /* ─── PRODUCT CARDS ─── */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+    .product-card {
+      background: var(--dark-3);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+      position: relative;
+    }
+    .product-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--red);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.5), 0 0 20px var(--red-glow);
+    }
+    .product-badge {
+      position: absolute;
+      top: 12px; left: 12px;
+      background: var(--red);
+      color: white;
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      padding: 4px 10px;
+      border-radius: 4px;
+      z-index: 2;
+    }
+    .product-img-wrap {
+      background: white;
+      padding: 20px;
+      aspect-ratio: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .product-img-wrap img { width: 100%; height: 100%; object-fit: contain; }
+    .product-info { padding: 16px; }
+    .product-tier {
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 4px;
+    }
+    .product-name {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    .product-desc { font-size: 12px; color: var(--text-muted); line-height: 1.5; margin-bottom: 14px; }
+    .product-footer { display: flex; align-items: center; justify-content: space-between; }
+    .product-price { font-family: var(--font-display); font-size: 20px; font-weight: 700; }
+    .btn-add {
+      background: var(--red);
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: opacity 0.2s, box-shadow 0.2s;
+    }
+    .btn-add:hover { opacity: 0.85; box-shadow: 0 0 12px var(--red-glow); }
+
+    /* ─── CATEGORIES ─── */
+    .cat-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 16px;
+    }
+    .cat-card {
+      background: var(--dark-3);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+      text-align: center;
+    }
+    .cat-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(230, 33, 92, 0.5);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+    }
+    .cat-img-wrap {
+      background: white;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      aspect-ratio: 1;
+    }
+    .cat-img-wrap img { width: 100%; height: 100%; object-fit: contain; }
+    .cat-label {
+      padding: 12px 10px;
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text);
+      border-top: 1px solid var(--border);
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      margin-top: 80px;
+      background: var(--dark-2);
+      border-top: 1px solid var(--border);
+      padding: 50px 30px 30px;
+    }
+    .footer-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    .footer-brand img { width: 140px; filter: brightness(0) invert(1); margin-bottom: 16px; }
+    .footer-brand p { font-size: 13px; color: var(--text-muted); line-height: 1.7; max-width: 260px; }
+    .footer-col h4 {
+      font-family: var(--font-display);
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 16px;
+    }
+    .footer-col a {
+      display: block;
+      text-decoration: none;
+      color: var(--text-muted);
+      font-size: 13px;
+      margin-bottom: 10px;
+      transition: color 0.2s;
+    }
+    .footer-col a:hover { color: white; }
+    .footer-bottom {
+      max-width: 1400px;
+      margin: 0 auto;
+      border-top: 1px solid var(--border);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    /* ─── ANIMATIONS ─── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .hero-main, .hero-side-card, .product-card, .cat-card {
+      animation: fadeUp 0.5s ease both;
+    }
+    .hero-main { animation-delay: 0.1s; }
+    .hero-side-card:nth-child(1) { animation-delay: 0.2s; }
+    .hero-side-card:nth-child(2) { animation-delay: 0.3s; }
+    .product-card:nth-child(1) { animation-delay: 0.1s; }
+    .product-card:nth-child(2) { animation-delay: 0.15s; }
+    .product-card:nth-child(3) { animation-delay: 0.2s; }
+    .product-card:nth-child(4) { animation-delay: 0.25s; }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="topbar">🔥 Livraison gratuite dès 1000 MAD &nbsp;|&nbsp; NOUVEAUX CONFIGS DISPONIBLES &nbsp;|&nbsp; Garantie 2 ans</div>
+
+  <!-- NAV 1 -->
+  <div class="nav-wrapper">
+    <nav class="nav-1">
+      <img src="logo-1.svg" class="store-logo" alt="MAXPC">
+      <div class="search-wrap">
+        <span class="search-icon">🔍</span>
+        <input type="text" placeholder="Rechercher des produits, marques...">
+      </div>
+      <div class="nav-actions">
+        <a href="https://maxgaming.ma/my-account/?action=register" target="_blank" class="btn-icon">👤 <span style="font-size:13px;font-family:var(--font-display);font-weight:600;letter-spacing:1px;">COMPTE</span></a>
+        <button class="btn-cart">🛒 PANIER <span class="cart-price">0,00 MAD</span></button>
+      </div>
+    </nav>
+  </div>
+
+  <!-- NAV 2 -->
+  <nav class="nav-2">
+    <div class="nav-2-inner">
+      <a class="nav-cat">NOS CATÉGORIES ⤵</a>
+      <a href="#">PC PORTABLES</a>
+      <a href="#" class="active">MAX PC</a>
+      <a href="#">NOUVEAUX PRODUITS</a>
+      <a href="#">PROMOTIONS</a>
+      <a href="#">BOUTIQUE</a>
+      <button class="btn-config">⚙ CONFIGURER VOTRE PC</button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-main">
+      <div class="hero-eyebrow">★ Performances Extrêmes</div>
+      <div class="hero-title">BUILD YOUR<br><span>BEAST</span></div>
+      <p class="hero-sub">Des configurations PC haute performance construites au Maroc, pensées pour le gaming, le streaming et la création.</p>
+      <button class="hero-cta">CONFIGURER MON PC →</button>
+    </div>
+    <div class="hero-side">
+      <div class="hero-side-card">
+        <div class="side-label">Nouveau</div>
+        <div class="side-title">MAXPC Extreme</div>
+        <div class="side-sub">La config ultime pour les pros</div>
+      </div>
+      <div class="hero-side-card">
+        <div class="side-label">Promo -15%</div>
+        <div class="side-title">PÉRIPHÉRIQUES</div>
+        <div class="side-sub">Claviers, souris, casques gaming</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRODUCTS -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-title">Nos Configurations MAXPC</div>
+      <a href="#" class="see-all">VOIR TOUT</a>
+    </div>
+    <div class="products-grid">
+      <div class="product-card">
+        <span class="product-badge">POPULAIRE</span>
+        <div class="product-img-wrap"><img src="pc-0.webp" alt="MAXPC Basique"></div>
+        <div class="product-info">
+          <div class="product-tier">Entrée de gamme</div>
+          <div class="product-name">MAXPC Basique</div>
+          <div class="product-desc">Idéal pour le gaming casual et les tâches quotidiennes.</div>
+          <div class="product-footer">
+            <div class="product-price">4 999 MAD</div>
+            <button class="btn-add">+ AJOUTER</button>
+          </div>
         </div>
-        <nav class="nav-2">
-            <a class="nos-cag">
-                NOS CATEGORIES  ⤵
-            </a>
-            <a>
-                PC PORTABLES |
-            </a>
-            <a>
-                MAX PC |
-            </a>
-            <a>
-                NOUVEAUX PRODUITS |
-            </a>
-            <a>
-                PROMOTIONS |
-            </a>
-            <a>
-                BOUTIQUE
-            </a>
-            <button class="config-1">
-                CONFIGURER VOTRE PC
-            </button>
-        </nav>
-    <div class="products-container">   
-        <div class="card">
-            <img src="pc-0.webp" class="pc-0">
+      </div>
+      <div class="product-card">
+        <div class="product-img-wrap"><img src="pc-1.webp" alt="MAXPC Advanced"></div>
+        <div class="product-info">
+          <div class="product-tier">Intermédiaire</div>
+          <div class="product-name">MAXPC Advanced</div>
+          <div class="product-desc">Performance équilibrée pour le gaming 1080p/1440p.</div>
+          <div class="product-footer">
+            <div class="product-price">8 499 MAD</div>
+            <button class="btn-add">+ AJOUTER</button>
+          </div>
         </div>
-        <div class="card">
-            <img src="pc-1.webp" class="pc-1">
+      </div>
+      <div class="product-card">
+        <span class="product-badge">NOUVEAU</span>
+        <div class="product-img-wrap"><img src="pc-2.webp" alt="MAXPC E-Sports"></div>
+        <div class="product-info">
+          <div class="product-tier">E-Sports</div>
+          <div class="product-name">MAXPC E-Sports</div>
+          <div class="product-desc">Taux de rafraîchissement élevé, latence minimale.</div>
+          <div class="product-footer">
+            <div class="product-price">11 999 MAD</div>
+            <button class="btn-add">+ AJOUTER</button>
+          </div>
         </div>
-        <div class="card">
-            <img src="pc-2.webp" class="pc-2">
+      </div>
+      <div class="product-card">
+        <span class="product-badge">ULTIMATE</span>
+        <div class="product-img-wrap"><img src="pc-3.webp" alt="MAXPC Extreme"></div>
+        <div class="product-info">
+          <div class="product-tier">Haut de gamme</div>
+          <div class="product-name">MAXPC Extreme</div>
+          <div class="product-desc">La bête absolue. 4K gaming, streaming & creation.</div>
+          <div class="product-footer">
+            <div class="product-price">19 999 MAD</div>
+            <button class="btn-add">+ AJOUTER</button>
+          </div>
         </div>
-        <div class="card">
-            <img src="pc-3.webp" class="pc-3">
-        </div>
+      </div>
     </div>
-    <h3 class="title-1">
-        Catégories les plus populaires
-    </h3>
-    <div class="img-container">
-    <div class="card-1">
-        <img src="lap-1.webp" class="lap-1" >
-        <a>
-            Processeurs
-        </a>
-    </div>
-    <div class="card-1">
-        <img src="lap-2.webp">
-        <a>
-            Périphérique PC
-        </a>
-    </div>
-    <div class="card-1">
-        <img src="lap-3.webp">
-        <a>
-            PC Portables Workstation
-        </a>
-    </div>
-    <div class="card-1">
-        <img src="lap-4.webp">
-        <a>
-            Écrans PC
-        </a>
-    </div>
-    <div class="card-1">
-        <img src="lap-5.webp">
-        <a>
-            Chaise Gaming
-        </a>
-    </div>
-    <div class="card-1">
-        <img src="lap-6.webp">
-        <a>
-            Cartes Mères
-        </a>
-    </div>
-    </div>
-    
-    </body>
+  </div>
 
+  <!-- CATEGORIES -->
+  <div class="section" style="margin-bottom: 20px;">
+    <div class="section-header">
+      <div class="section-title">Catégories les plus populaires</div>
+      <a href="#" class="see-all">VOIR TOUT</a>
+    </div>
+    <div class="cat-grid">
+      <div class="cat-card">
+        <div class="cat-img-wrap"><img src="lap-1.webp" alt="Processeurs"></div>
+        <div class="cat-label">Processeurs</div>
+      </div>
+      <div class="cat-card">
+        <div class="cat-img-wrap"><img src="lap-2.webp" alt="Périphériques PC"></div>
+        <div class="cat-label">Périphériques PC</div>
+      </div>
+      <div class="cat-card">
+        <div class="cat-img-wrap"><img src="lap-3.webp" alt="PC Portables"></div>
+        <div class="cat-label">PC Portables Workstation</div>
+      </div>
+      <div class="cat-card">
+        <div class="cat-img-wrap"><img src="lap-4.webp" alt="Écrans PC"></div>
+        <div class="cat-label">Écrans PC</div>
+      </div>
+      <div class="cat-card">
+        <div class="cat-img-wrap"><img src="lap-5.webp" alt="Chaise Gaming"></div>
+        <div class="cat-label">Chaise Gaming</div>
+      </div>
+      <div class="cat-card">
+        <div class="cat-img-wrap"><img src="lap-6.webp" alt="Cartes Mères"></div>
+        <div class="cat-label">Cartes Mères</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="logo-1.svg" alt="MAXPC">
+        <p>Votre partenaire gaming au Maroc. Des configurations sur mesure, des composants premium, livrés chez vous.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Produits</h4>
+        <a href="#">PC Gaming</a>
+        <a href="#">PC Portables</a>
+        <a href="#">Composants</a>
+        <a href="#">Périphériques</a>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <a href="#">FAQ</a>
+        <a href="#">Garantie</a>
+        <a href="#">Livraison</a>
+        <a href="#">Retours</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="#">📍 Casablanca, Maroc</a>
+        <a href="#">📞 +212 5XX-XXXXXX</a>
+        <a href="#">✉ support@maxpc.ma</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 MAXPC Store. Tous droits réservés.</span>
+      <span>Fait avec ❤️ au Maroc 🇲🇦</span>
+    </div>
+  </footer>
+
+</body>
 </html>
