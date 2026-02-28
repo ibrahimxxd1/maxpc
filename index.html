@@ -110,6 +110,7 @@
       transition: background 0.2s, border-color 0.2s;
       display: flex; align-items: center; gap: 8px;
       text-decoration: none;
+      white-space: nowrap;
     }
     .btn-icon:hover { background: var(--dark-4); border-color: var(--red); }
     .btn-cart {
@@ -125,6 +126,7 @@
       letter-spacing: 1px;
       display: flex; align-items: center; gap: 8px;
       transition: opacity 0.2s, box-shadow 0.2s;
+      white-space: nowrap;
     }
     .btn-cart:hover { opacity: 0.85; box-shadow: 0 0 20px var(--red-glow); }
     .cart-price { font-size: 13px; color: rgba(255,255,255,0.7); font-weight: 400; }
@@ -188,6 +190,7 @@
       border-radius: 6px;
       cursor: pointer;
       transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+      white-space: nowrap;
     }
     .btn-config:hover {
       background: var(--red);
@@ -346,6 +349,7 @@
       padding: 8px 18px;
       border-radius: 6px;
       transition: background 0.2s, color 0.2s;
+      white-space: nowrap;
     }
     .see-all:hover { background: var(--red); color: white; }
 
@@ -528,6 +532,487 @@
     .product-card:nth-child(2) { animation-delay: 0.15s; }
     .product-card:nth-child(3) { animation-delay: 0.2s; }
     .product-card:nth-child(4) { animation-delay: 0.25s; }
+
+    /* ========== ENHANCED MEDIA QUERIES ========== */
+
+    /* Small phones (up to 480px) */
+    @media screen and (max-width: 480px) {
+      .topbar {
+        font-size: 9px;
+        padding: 5px 10px;
+        letter-spacing: 1px;
+      }
+
+      nav.nav-1 {
+        flex-wrap: wrap;
+        padding: 10px 15px;
+        gap: 10px;
+      }
+
+      .store-logo {
+        width: 120px;
+      }
+
+      .search-wrap {
+        order: 3;
+        max-width: 100%;
+        width: 100%;
+        margin: 5px 0;
+      }
+
+      .nav-actions {
+        margin-left: auto;
+        gap: 5px;
+      }
+
+      .btn-icon {
+        padding: 8px 10px;
+        font-size: 16px;
+      }
+
+      .btn-icon span {
+        display: none; /* Hide text on mobile */
+      }
+
+      .btn-cart {
+        padding: 8px 12px;
+        font-size: 13px;
+      }
+
+      .cart-price {
+        display: none; /* Hide price on mobile */
+      }
+
+      .nav-2-inner {
+        padding: 0 10px;
+        overflow-x: auto;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+      }
+
+      .nav-2-inner::-webkit-scrollbar {
+        display: none;
+      }
+
+      .nav-2-inner a {
+        font-size: 11px;
+        padding: 12px 10px;
+      }
+
+      .nav-cat {
+        padding: 12px 12px !important;
+        margin-right: 5px;
+      }
+
+      .btn-config {
+        display: none; /* Hide on mobile */
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 0 15px;
+        gap: 15px;
+      }
+
+      .hero-main {
+        padding: 30px 25px;
+        min-height: 280px;
+      }
+
+      .hero-main::before {
+        width: 250px;
+        height: 250px;
+        top: -50px;
+        right: -50px;
+      }
+
+      .hero-eyebrow {
+        font-size: 10px;
+        letter-spacing: 3px;
+      }
+
+      .hero-title {
+        font-size: 42px;
+      }
+
+      .hero-sub {
+        font-size: 13px;
+        margin-bottom: 20px;
+      }
+
+      .hero-cta {
+        font-size: 13px;
+        padding: 12px 24px;
+      }
+
+      .hero-side {
+        flex-direction: row;
+        gap: 15px;
+      }
+
+      .hero-side-card {
+        padding: 18px;
+      }
+
+      .side-title {
+        font-size: 18px;
+      }
+
+      .section {
+        margin: 40px auto 0;
+        padding: 0 15px;
+      }
+
+      .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+
+      .section-title {
+        font-size: 22px;
+      }
+
+      .section-title::before {
+        height: 22px;
+      }
+
+      .products-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+
+      .product-info {
+        padding: 14px;
+      }
+
+      .product-name {
+        font-size: 18px;
+      }
+
+      .product-price {
+        font-size: 18px;
+      }
+
+      .btn-add {
+        padding: 6px 14px;
+        font-size: 12px;
+      }
+
+      .cat-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+
+      .cat-label {
+        font-size: 11px;
+        padding: 10px 5px;
+      }
+
+      footer {
+        margin-top: 50px;
+        padding: 30px 15px 20px;
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+
+      .footer-brand p {
+        max-width: 100%;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+        font-size: 10px;
+      }
+    }
+
+    /* Medium phones (481px to 767px) */
+    @media screen and (min-width: 481px) and (max-width: 767px) {
+      nav.nav-1 {
+        flex-wrap: wrap;
+        padding: 12px 20px;
+      }
+
+      .store-logo {
+        width: 140px;
+      }
+
+      .search-wrap {
+        order: 3;
+        max-width: 100%;
+        width: 100%;
+      }
+
+      .btn-icon span {
+        display: none;
+      }
+
+      .btn-config {
+        display: none;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 0 20px;
+      }
+
+      .hero-main {
+        padding: 40px 35px;
+      }
+
+      .hero-title {
+        font-size: 52px;
+      }
+
+      .hero-side {
+        flex-direction: row;
+      }
+
+      .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+      }
+
+      .cat-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+      }
+
+      .footer-brand {
+        grid-column: span 2;
+      }
+    }
+
+    /* Tablets (768px to 1023px) */
+    @media screen and (min-width: 768px) and (max-width: 1023px) {
+      nav.nav-1 {
+        gap: 15px;
+      }
+
+      .store-logo {
+        width: 140px;
+      }
+
+      .btn-icon span {
+        display: none;
+      }
+
+      .btn-config {
+        display: inline-block;
+        font-size: 11px;
+        padding: 8px 12px;
+      }
+
+      .hero {
+        grid-template-columns: 1fr 280px;
+        padding: 0 25px;
+      }
+
+      .hero-main {
+        padding: 40px 30px;
+      }
+
+      .hero-title {
+        font-size: 52px;
+      }
+
+      .hero-sub {
+        font-size: 14px;
+      }
+
+      .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+
+      .cat-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+      }
+
+      .footer-inner {
+        gap: 30px;
+      }
+    }
+
+    /* Small laptops (1024px to 1279px) */
+    @media screen and (min-width: 1024px) and (max-width: 1279px) {
+      nav.nav-1 {
+        padding: 14px 25px;
+      }
+
+      .hero {
+        padding: 0 25px;
+      }
+
+      .hero-main {
+        padding: 50px 40px;
+      }
+
+      .hero-title {
+        font-size: 62px;
+      }
+
+      .products-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .cat-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .footer-inner {
+        gap: 30px;
+      }
+    }
+
+    /* Large desktops (1440px and above) */
+    @media screen and (min-width: 1440px) {
+      .hero-title {
+        font-size: 82px;
+      }
+
+      .hero-main {
+        padding: 70px 60px;
+        min-height: 380px;
+      }
+
+      .products-grid {
+        gap: 20px;
+      }
+
+      .product-info {
+        padding: 20px;
+      }
+
+      .product-name {
+        font-size: 22px;
+      }
+
+      .product-price {
+        font-size: 22px;
+      }
+
+      .btn-add {
+        padding: 10px 20px;
+      }
+    }
+
+    /* Landscape mode for phones */
+    @media screen and (max-height: 600px) and (orientation: landscape) {
+      .hero {
+        margin: 20px auto 0;
+      }
+
+      .hero-main {
+        padding: 30px 35px;
+        min-height: 220px;
+      }
+
+      .hero-title {
+        font-size: 42px;
+        margin-bottom: 10px;
+      }
+
+      .hero-sub {
+        margin-bottom: 15px;
+        font-size: 13px;
+      }
+
+      .hero-cta {
+        padding: 10px 24px;
+      }
+
+      .hero-side-card {
+        padding: 15px;
+      }
+
+      .products-grid {
+        gap: 12px;
+      }
+
+      .product-info {
+        padding: 12px;
+      }
+
+      .product-name {
+        font-size: 16px;
+      }
+    }
+
+    /* Touch device optimizations */
+    @media (hover: none) and (pointer: coarse) {
+      .product-card:hover {
+        transform: none;
+      }
+
+      .btn-add,
+      .btn-cart,
+      .btn-icon,
+      .btn-config,
+      .hero-cta {
+        min-height: 44px;
+      }
+
+      .nav-2-inner {
+        -webkit-overflow-scrolling: touch;
+      }
+    }
+
+    /* High-resolution screens */
+    @media screen and (min-width: 1920px) {
+      .hero-title {
+        font-size: 92px;
+      }
+
+      .products-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+      }
+
+      .product-name {
+        font-size: 24px;
+      }
+
+      .product-price {
+        font-size: 24px;
+      }
+
+      .section-title {
+        font-size: 32px;
+      }
+
+      .cat-grid {
+        grid-template-columns: repeat(6, 1fr);
+      }
+    }
+
+    /* Print styles */
+    @media print {
+      .topbar, .nav-wrapper, .nav-2, .hero-cta, .btn-add, .see-all, footer {
+        display: none;
+      }
+
+      body {
+        background: white;
+        color: black;
+      }
+
+      .product-card {
+        break-inside: avoid;
+        border: 1px solid #ddd;
+      }
+    }
   </style>
 </head>
 <body>
@@ -626,93 +1111,4 @@
           <div class="product-desc">Taux de rafraîchissement élevé, latence minimale.</div>
           <div class="product-footer">
             <div class="product-price">11 999 MAD</div>
-            <button class="btn-add">+ AJOUTER</button>
-          </div>
-        </div>
-      </div>
-      <div class="product-card">
-        <span class="product-badge">ULTIMATE</span>
-        <div class="product-img-wrap"><img src="pc-3.webp" alt="MAXPC Extreme"></div>
-        <div class="product-info">
-          <div class="product-tier">Haut de gamme</div>
-          <div class="product-name">MAXPC Extreme</div>
-          <div class="product-desc">La bête absolue. 4K gaming, streaming & creation.</div>
-          <div class="product-footer">
-            <div class="product-price">19 999 MAD</div>
-            <button class="btn-add">+ AJOUTER</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- CATEGORIES -->
-  <div class="section" style="margin-bottom: 20px;">
-    <div class="section-header">
-      <div class="section-title">Catégories les plus populaires</div>
-      <a href="#" class="see-all">VOIR TOUT</a>
-    </div>
-    <div class="cat-grid">
-      <div class="cat-card">
-        <div class="cat-img-wrap"><img src="lap-1.webp" alt="Processeurs"></div>
-        <div class="cat-label">Processeurs</div>
-      </div>
-      <div class="cat-card">
-        <div class="cat-img-wrap"><img src="lap-2.webp" alt="Périphériques PC"></div>
-        <div class="cat-label">Périphériques PC</div>
-      </div>
-      <div class="cat-card">
-        <div class="cat-img-wrap"><img src="lap-3.webp" alt="PC Portables"></div>
-        <div class="cat-label">PC Portables Workstation</div>
-      </div>
-      <div class="cat-card">
-        <div class="cat-img-wrap"><img src="lap-4.webp" alt="Écrans PC"></div>
-        <div class="cat-label">Écrans PC</div>
-      </div>
-      <div class="cat-card">
-        <div class="cat-img-wrap"><img src="lap-5.webp" alt="Chaise Gaming"></div>
-        <div class="cat-label">Chaise Gaming</div>
-      </div>
-      <div class="cat-card">
-        <div class="cat-img-wrap"><img src="lap-6.webp" alt="Cartes Mères"></div>
-        <div class="cat-label">Cartes Mères</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <img src="logo-1.svg" alt="MAXPC">
-        <p>Votre partenaire gaming au Maroc. Des configurations sur mesure, des composants premium, livrés chez vous.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Produits</h4>
-        <a href="#">PC Gaming</a>
-        <a href="#">PC Portables</a>
-        <a href="#">Composants</a>
-        <a href="#">Périphériques</a>
-      </div>
-      <div class="footer-col">
-        <h4>Support</h4>
-        <a href="#">FAQ</a>
-        <a href="#">Garantie</a>
-        <a href="#">Livraison</a>
-        <a href="#">Retours</a>
-      </div>
-      <div class="footer-col">
-        <h4>Contact</h4>
-        <a href="#">📍 Casablanca, Maroc</a>
-        <a href="#">📞 +212 5XX-XXXXXX</a>
-        <a href="#">✉ support@maxpc.ma</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2024 MAXPC Store. Tous droits réservés.</span>
-      <span>Fait avec ❤️ au Maroc 🇲🇦</span>
-    </div>
-  </footer>
-
-</body>
-</html>
+            <button class="btn-add">
